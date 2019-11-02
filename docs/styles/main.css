@@ -1,0 +1,77 @@
+body {
+    background-image: url("../images/san-fran-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 10%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.p-1 {
+    padding: 1rem!important;
+}
+
+#name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 89px;
+    text-decoration: underline;
+    /* font-weight: bold; */
+}
+
+#last {
+    font-family: 'Rubik', sans-serif;
+    font-size: 89px;
+    font-weight: lighter;
+}
+
+.explore {
+    padding: 3rem;
+}
+  /* Color palette */
+
+.custom-dark {
+    color: #00334e;
+}
+
+.dark-grey {
+    color: #1c1c1c;
+}
+
+.dark-blue {
+    color: #145374;
+}
+
+.medium-grey {
+    color: #41494E;
+}
+
+.md-blue {
+    color: #5588a3;
+}
+
+.section-margin {
+    margin-top: 40px;
+}
+
+.bg-bar {
+    background-color: #000000;
+}
+
+.custom-btn-bg {
+    background-color: #00334e;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.p-font {
+    font-family: 'Lato', sans-serif;
+    font-size: 14pt;
+}
+
+.header-font {
+    font-family: 'PT Serif', serif;
+}
+

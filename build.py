@@ -1,19 +1,43 @@
 from string import Template
 
-full_template = open('./templates/template.html').read()
-template = Template(full_template)
+pages = [
+    {
+    "filename": "content/index.html",
+    "output": "docs/index.html",
+    "title": "Home",
+    },
+    {
+    "filename": "content/projects.html",
+    "output": "docs/projects.html",
+    "title": "Projects",
+    },
+    {
+    "filename": "content/resume.html",
+    "output": "docs/resume.html",
+    "title": "Resume",
+    },
+    {
+    "filename": "content/blog.html",
+    "output": "docs/blog.html",
+    "title": "Blog",
+    },
+    {
+    "filename": "content/contact.html",
+    "output": "docs/contact.html",
+    "title": "Contact",
+    },
+]
 
-page_content = template.safe_substitute(content=open('./content/index.html').read())
-open('./docs/index.html', 'w+').write(page_content)
+def main():
 
-page_content = template.safe_substitute(content=open('./content/projects.html').read())
-open('./docs/projects.html', 'w+').write(page_content)
+    full_template = open('./templates/template.html').read()
+    template = Template(full_template)
 
-page_content = template.safe_substitute(content=open('./content/resume.html').read())
-open('./docs/resume.html', 'w+').write(page_content)
+    for page in pages:
+        content_file = page["filename"]
+        output_file = page["output"]
+        page_content = template.safe_substitute(content=open(content_file).read())
+        open(output_file, 'w+').write(page_content)
 
-page_content = template.safe_substitute(content=open('./content/blog.html').read())
-open('./docs/blog.html', 'w+').write(page_content)
-
-page_content = template.safe_substitute(content=open('./content/contact.html').read())
-open('./docs/contact.html', 'w+').write(page_content)
+if __name__ == "__main__":
+    main()

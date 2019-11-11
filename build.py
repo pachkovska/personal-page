@@ -31,7 +31,7 @@ def read_file(file):
     return template       
 
 def insert_content(content_file, title):
-    template = read_file('./templates/template.html')
+    template = read_file('./templates/base.html')
     full_page = template.replace('{{title}}', title).replace('{{content}}',content_file)
     return full_page
 

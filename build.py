@@ -1,5 +1,3 @@
-from string import Template
-
 pages = [
     {
     "filename": "content/index.html",
@@ -28,16 +26,28 @@ pages = [
     },
 ]
 
+def read_file(file):
+    template = open(file).read()
+    return template       
+
+def insert_content(content_file, title):
+    template = read_file('./templates/template.html')
+    full_page = template.replace('{{title}}', title).replace('{{content}}',content_file)
+    return full_page
+
+def write_file(output_file, full_page):
+    open(output_file, 'w+').write(full_page)
+    return output_file
+        
 def main():
-
-    full_template = open('./templates/template.html').read()
-    template = Template(full_template)
-
-    for page in pages:
+    for page  in pages:
         content_file = page["filename"]
         output_file = page["output"]
-        page_content = template.safe_substitute(content=open(content_file).read())
-        open(output_file, 'w+').write(page_content)
+        title = page["title"]
+        replacement = insert_content(read_file(content_file), title)
+        final = write_file(output_file, replacement)
+        return final
+
 
 if __name__ == "__main__":
     main()

@@ -46,7 +46,7 @@ def main():
         title = page["title"]
         replacement = insert_content(read_file(content_file), title)
         final = write_file(output_file, replacement)
-        return final
+    return final
 
 
 if __name__ == "__main__":

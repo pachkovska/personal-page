@@ -30,15 +30,19 @@ def read_file(file):
     template = open(file).read()
     return template       
 
+# function to use for replacement of both placeholders in HTML template
 def insert_content(content_file, title):
     template = read_file('./templates/base.html')
     full_page = template.replace('{{title}}', title).replace('{{content}}',content_file)
     return full_page
 
+# function to use for output file creation
 def write_file(output_file, full_page):
     open(output_file, 'w+').write(full_page)
     return output_file
-        
+
+# function that iterates through list of pages, uses earlier defined functions 
+# to open all input files, replaces placeholders and creates output files         
 def main():
     for page  in pages:
         content_file = page["filename"]

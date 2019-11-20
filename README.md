@@ -3,8 +3,9 @@
 
 This website was made from scratch with a lot of bootstrap features and components. 
 
-### To regenerate web pages run one of the the following command in the root directory:
-```python3 build.py```
+### To regenerate web pages run ofollowing commands in the root directory:
+```pipenv shell```
+```python manage.py build```
 
 ### Selected Color Scheme
 

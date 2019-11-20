@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 {% for page in pages %} 
-                    <a class="nav-item nav-link {% if page.title == title %}active{% endif %}" href="{{page.output}}">{{page.title|title}}</a>
+                    <a class="nav-item nav-link {% if page.title == title %}active{% endif %}" href="{{page.output_file_name}}">{{page.title|title}}</a>
                 {% endfor %}
             </div>
         </div>

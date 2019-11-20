@@ -10,9 +10,10 @@ for content_file in  content_files:
     file_name = os.path.basename(content_file)
     name_only, extention = os.path.splitext(file_name)
     pages.append({
-        "filename": content_file, 
-        "output": os.path.join('docs', file_name), 
+        "content_file_name": content_file, 
+        "output_file_path": os.path.join('docs', file_name), 
         "title": name_only if file_name != 'index.html' else 'home',
+        "output_file_name": file_name,
     })
 
 # Read all input files
@@ -39,8 +40,8 @@ def write_file(output_file, full_page):
 # Use earlier defined functions to open all input files, replace placeholders and to create output files         
 def main():
     for page  in pages:
-        content_file = page["filename"]
-        output_file = page["output"]
+        content_file = page["content_file_name"]
+        output_file = page["output_file_path"]
         title = page["title"]
         replacement = insert_content(read_file(content_file), title)
         final = write_file(output_file, replacement)
@@ -56,3 +57,5 @@ def new():
     new_template = 'content/new_page_content.html'
     open(new_template, 'w+').write(content_template)
     return new_template
+
+print(pages)

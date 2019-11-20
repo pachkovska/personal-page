@@ -57,5 +57,3 @@ def new():
     new_template = 'content/new_page_content.html'
     open(new_template, 'w+').write(content_template)
     return new_template
-
-print(pages)

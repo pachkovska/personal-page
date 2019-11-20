@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>{{title}}</title>
+    <title>{{title|title}}</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato|PT+Serif|Rubik&display=swap" rel="stylesheet">
     <link href="./styles/main.css" rel="stylesheet">
@@ -17,11 +17,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link {{active_home}}" href="./index.html">Home</a>
-                <a class="nav-item nav-link {{active_projects}}" href="./projects.html">Projects</a>
-                <a class="nav-item nav-link {{active_resume}}" href="./resume.html">Resume</a>
-                <a class="nav-item nav-link {{active_blog}}" href="./blog.html">Blog</a>
-                <a class="nav-item nav-link {{active_contact}}" href="./contact.html">Contact</a>
+                {% for page in pages %} 
+                    <a class="nav-item nav-link {% if page.title == title %}active{% endif %}" href="{{page.output}}">{{page.title|title}}</a>
+                {% endfor %}
             </div>
         </div>
     </nav>

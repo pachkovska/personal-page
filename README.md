@@ -4,7 +4,7 @@
 This website was made from scratch with a lot of bootstrap features and components. 
 
 ### To regenerate web pages run ofollowing commands in the root directory:
-```pipenv shell```
+```pipenv shell``` . 
 ```python manage.py build```
 
 ### Selected Color Scheme

@@ -1,5 +1,6 @@
 import glob
 import os
+import re
 from jinja2 import Template
 
 content_files = glob.glob('content/*.html')
@@ -49,11 +50,13 @@ def main():
 
 # Create new content page template
 def new():
+    new_page_title = input('What is new content page template title? ')
+    cleansed_file_name = re.sub(r'\W', '_', new_page_title)
     content_template = """<div class="conatiner p-font">
     <div class="row">
 
     </div>
 </div>"""
-    new_template = 'content/new_page_content.html'
+    new_template = f'content/{cleansed_file_name}.html'
     open(new_template, 'w+').write(content_template)
     return new_template
